@@ -4051,26 +4051,34 @@ Click the help icon above to learn more.
                                                                                         >
                                                                                             <noscript class="wpforms-error-noscript">Please enable JavaScript in your browser to complete this form.</noscript>
                                                                                             <div class="wpforms-field-container">
+                                                                                                <span>Nama</span>
                                                                                                 <div id="wpforms-512-field_0-container" class="wpforms-field wpforms-field-name" data-field-id="0">
-                                                                                                    <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_0">Name</label>
-                                                                                                    <input type="text" id="wpforms-512-field_0" class="wpforms-field-large" name="wpforms[fields][0]" placeholder="Name" />
+                                                                                                    <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_0">Nama</label>
+                                                                                                    <input type="text" id="wpforms-512-field_0" class="wpforms-field-large" name="wpforms[fields][0]" placeholder="Nama" />
                                                                                                 </div>
+                                                                                                <br>
+                                                                                                <span>Konfirmasi Kehadiran</span>
                                                                                                 <div id="wpforms-512-field_3-container" class="wpforms-field wpforms-field-text" data-field-id="3">
-                                                                                                    <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_3">Your Phone Number</label>
-                                                                                                    <input type="text" id="wpforms-512-field_3" class="wpforms-field-large" name="wpforms[fields][3]" placeholder="Phone Number" />
+                                                                                                    <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_3">Kehadiran</label>
+                                                                                                    <select id="kehadiran" name="kehadiran">
+                                                                                                        <option selected disabled>Silahkan Pilih</option>
+                                                                                                        <option value="tidak hadir">Tidak. Maaf ya kawan</option>
+                                                                                                        <option value="hadir">Ya. Saya akan hadir</option>
+                                                                                                    </select>
                                                                                                 </div>
-                                                                                                <div id="wpforms-512-field_2-container" class="wpforms-field wpforms-field-textarea" data-field-id="2">
-                                                                                                    <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_2">
-                                                                                                        Comment or Message <span class="wpforms-required-label">*</span>
-                                                                                                    </label>
-                                                                                                    <textarea
-                                                                                                        id="wpforms-512-field_2"
-                                                                                                        class="wpforms-field-large wpforms-field-required"
-                                                                                                        name="wpforms[fields][2]"
-                                                                                                        placeholder="Message"
-                                                                                                        required=""
-                                                                                                    ></textarea>
+                                                                                                <span><br>Jumlah Kehadiran</span>
+                                                                                                <div id="wpforms-512-field_3-container" class="wpforms-field wpforms-field-text" data-field-id="3">
+                                                                                                    <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_3">Jumlah Kehadiran</label>
+                                                                                                    <select id="jumlah_kehadiran" name="jumlah_kehadiran">
+                                                                                                        <option selected disabled>Silahkan Pilih</option>
+                                                                                                        <option value="1">1 orang</option>
+                                                                                                        <option value="2">2 orang</option>
+                                                                                                        <option value="3">3 orang</option>
+                                                                                                        <option value="4">4 orang</option>
+                                                                                                        <option value="5">5 orang</option>
+                                                                                                    </select>
                                                                                                 </div>
+                                                                                                
                                                                                             </div>
                                                                                             <div class="wpforms-field wpforms-field-hp">
                                                                                                 <label for="wpforms-512-field-hp" class="wpforms-field-label">Website</label>
@@ -4080,6 +4088,7 @@ Click the help icon above to learn more.
                                                                                                 <input type="hidden" name="wpforms[id]" value="512" /><input type="hidden" name="wpforms[author]" value="12" />
                                                                                                 <input type="hidden" name="wpforms[post_id]" value="2" />
                                                                                                 <button
+                                                                                                    style="background-color: #be896a; color: white;"
                                                                                                     type="submit"
                                                                                                     name="wpforms[submit]"
                                                                                                     id="wpforms-submit-512"
