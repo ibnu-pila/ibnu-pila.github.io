@@ -3395,6 +3395,16 @@ Click the help icon above to learn more.
         </style>
         <link id="google-fonts-domain" rel="preconnect" href="https://fonts.gstatic.com/" />
         <link id="google-fonts-url" rel="stylesheet" href="./Wedding Invitation-1_files/css2" />
+        <script type="text/javascript">
+            function setName() {
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const to = urlParams.get('to');
+                const from = urlParams.get('from');
+                document.getElementById("invitee").innerHTML = "Dear " + to + ",";
+                document.getElementById("name_input").value = to;
+            }
+        </script>
     </head>
 
     <body
@@ -3403,6 +3413,7 @@ Click the help icon above to learn more.
         class="home page-template-default page page-id-2 ast-desktop ast-page-builder-template ast-no-sidebar astra-4.1.5 ast-header-custom-item-inside ast-single-post ast-inherit-site-logo-transparent elementor-default elementor-kit-594 elementor-page elementor-page-2 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit"
         style="background-color: #c3b4d2;"
         data-elementor-device-mode="desktop"
+        onload="setName();"
     >
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW78FQ8" height="0" width="0" style="display: none; visibility: hidden;"></iframe></noscript>
 
@@ -3567,7 +3578,7 @@ Click the help icon above to learn more.
                                           >
                                               <div class="elementor-widget-container">
                                                   <br>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Dear Gita,</h2>
+                                                  <h2 class="elementor-heading-title elementor-size-default" id="invitee">Dear _,</h2>
                                                   <br>
                                               </div>
                                           </div>
@@ -3983,13 +3994,13 @@ Click the help icon above to learn more.
                                                                                                 <span>Nama</span>
                                                                                                 <div id="wpforms-512-field_0-container" class="wpforms-field wpforms-field-name" data-field-id="0">
                                                                                                     <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_0">Nama</label>
-                                                                                                    <input type="text" id="wpforms-512-field_0" class="wpforms-field-large" name="wpforms[fields][0]" placeholder="Nama" />
+                                                                                                    <input type="text" id="name_input" class="wpforms-field-large" name="wpforms[fields][0]" placeholder="Nama" />
                                                                                                 </div>
                                                                                                 <br>
                                                                                                 <span>Konfirmasi Kehadiran</span>
                                                                                                 <div id="wpforms-512-field_3-container" class="wpforms-field wpforms-field-text" data-field-id="3">
                                                                                                     <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_3">Kehadiran</label>
-                                                                                                    <select id="kehadiran" name="kehadiran">
+                                                                                                    <select id="kehadiran_input" name="kehadiran">
                                                                                                         <option selected disabled>Silahkan Pilih</option>
                                                                                                         <option value="tidak hadir">Tidak. Maaf ya kawan</option>
                                                                                                         <option value="hadir">Ya. Saya akan hadir</option>
@@ -3998,7 +4009,7 @@ Click the help icon above to learn more.
                                                                                                 <span><br>Jumlah Kehadiran</span>
                                                                                                 <div id="wpforms-512-field_3-container" class="wpforms-field wpforms-field-text" data-field-id="3">
                                                                                                     <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_3">Jumlah Kehadiran</label>
-                                                                                                    <select id="jumlah_kehadiran" name="jumlah_kehadiran">
+                                                                                                    <select id="jumlah_kehadiran_input" name="jumlah_kehadiran">
                                                                                                         <option selected disabled>Silahkan Pilih</option>
                                                                                                         <option value="1">1 orang</option>
                                                                                                         <option value="2">2 orang</option>
