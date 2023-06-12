@@ -3396,13 +3396,33 @@ Click the help icon above to learn more.
         <link id="google-fonts-domain" rel="preconnect" href="https://fonts.gstatic.com/" />
         <link id="google-fonts-url" rel="stylesheet" href="./Wedding Invitation-1_files/css2" />
         <script type="text/javascript">
+            window.addEventListener("load", function() {
+            const form = document.getElementById('form_kehadiran');
+            form.addEventListener("submit", function(e) {
+                document.getElementById("submit").innerHTML = "Sending ...";
+                e.preventDefault();
+                const data = new FormData(form);
+                const action = e.target.action;
+                fetch(action, {
+                method: 'POST',
+                body: data,
+                })
+                .then(() => {
+                document.getElementById("submit").innerHTML = "Send";
+                alert("Terima Kasih");
+                
+                })
+            });
+            });
+
             function setName() {
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
                 const to = urlParams.get('to');
                 const from = urlParams.get('from');
                 document.getElementById("invitee").innerHTML = "Dear " + to + ",";
-                document.getElementById("name_input").value = to;
+                document.getElementById("nama").value = to;
+                document.getElementById("from").value = from;
             }
         </script>
     </head>
@@ -3980,27 +4000,24 @@ Click the help icon above to learn more.
                                                                                 <div class="elementor-shortcode">
                                                                                     <div class="wpforms-container" id="wpforms-512">
                                                                                         <form
-                                                                                            id="wpforms-form-512"
-                                                                                            class="wpforms-validate wpforms-form"
-                                                                                            data-formid="512"
-                                                                                            method="post"
+                                                                                            id="form_kehadiran"
                                                                                             enctype="multipart/form-data"
-                                                                                            action="https://websitedemos.net/wedding-02/"
-                                                                                            data-token="c8ead805897dd2e702ea7bcafc6e7470"
-                                                                                            novalidate="novalidate"
+                                                                                            action="https://script.google.com/macros/s/AKfycbyhPsfjXzBOk-HSTAXNPL2Oj_AiqEPll911PxHlOStoe-Me6I0sh0LDrWV0a9xLu5GEVw/exec"
+
                                                                                         >
                                                                                             <noscript class="wpforms-error-noscript">Please enable JavaScript in your browser to complete this form.</noscript>
                                                                                             <div class="wpforms-field-container">
+                                                                                                <input type="hidden" id="from" name="from" />
                                                                                                 <span>Nama</span>
                                                                                                 <div id="wpforms-512-field_0-container" class="wpforms-field wpforms-field-name" data-field-id="0">
                                                                                                     <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_0">Nama</label>
-                                                                                                    <input type="text" id="name_input" class="wpforms-field-large" name="wpforms[fields][0]" placeholder="Nama" />
+                                                                                                    <input type="text" id="nama" class="wpforms-field-large" name="nama" placeholder="Nama" />
                                                                                                 </div>
                                                                                                 <br>
                                                                                                 <span>Konfirmasi Kehadiran</span>
                                                                                                 <div id="wpforms-512-field_3-container" class="wpforms-field wpforms-field-text" data-field-id="3">
                                                                                                     <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_3">Kehadiran</label>
-                                                                                                    <select id="kehadiran_input" name="kehadiran">
+                                                                                                    <select id="kehadiran" name="kehadiran">
                                                                                                         <option selected disabled>Silahkan Pilih</option>
                                                                                                         <option value="tidak hadir">Tidak. Maaf ya kawan</option>
                                                                                                         <option value="hadir">Ya. Saya akan hadir</option>
@@ -4009,7 +4026,7 @@ Click the help icon above to learn more.
                                                                                                 <span><br>Jumlah Kehadiran</span>
                                                                                                 <div id="wpforms-512-field_3-container" class="wpforms-field wpforms-field-text" data-field-id="3">
                                                                                                     <label class="wpforms-field-label wpforms-label-hide" for="wpforms-512-field_3">Jumlah Kehadiran</label>
-                                                                                                    <select id="jumlah_kehadiran_input" name="jumlah_kehadiran">
+                                                                                                    <select id="jumlah_kehadiran" name="jumlah_kehadiran">
                                                                                                         <option selected disabled>Silahkan Pilih</option>
                                                                                                         <option value="1">1 orang</option>
                                                                                                         <option value="2">2 orang</option>
@@ -4020,23 +4037,17 @@ Click the help icon above to learn more.
                                                                                                 </div>
                                                                                                 
                                                                                             </div>
-                                                                                            <div class="wpforms-field wpforms-field-hp">
-                                                                                                <label for="wpforms-512-field-hp" class="wpforms-field-label">Website</label>
-                                                                                                <input type="text" name="wpforms[hp]" id="wpforms-512-field-hp" class="wpforms-field-medium" />
-                                                                                            </div>
                                                                                             <div class="wpforms-submit-container">
-                                                                                                <input type="hidden" name="wpforms[id]" value="512" /><input type="hidden" name="wpforms[author]" value="12" />
-                                                                                                <input type="hidden" name="wpforms[post_id]" value="2" />
                                                                                                 <button
                                                                                                     style="background-color: #be896a; color: white;"
                                                                                                     type="submit"
                                                                                                     name="wpforms[submit]"
-                                                                                                    id="wpforms-submit-512"
                                                                                                     class="wpforms-submit"
                                                                                                     data-alt-text="Sending..."
                                                                                                     data-submit-text="Send"
                                                                                                     aria-live="assertive"
-                                                                                                    value="wpforms-submit"
+                                                                                                    value="submit"
+                                                                                                    id="submit"
                                                                                                 >
                                                                                                     Send
                                                                                                 </button>
